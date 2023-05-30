@@ -20,7 +20,7 @@ const GenreList = ({ onSelectedGenre }: Props) => {
                     {skeletons.map(skeleton => <Skeleton height='40px' key={skeleton} />)}
                 </Stack>
             }
-            {data.map(genre =>
+                {data?.results.map(genre =>
                 <ListItem key={genre.id} paddingY='5px'>
                     <HStack>
                         <Image boxSize="32px" objectFit={'cover'} borderRadius={8} src={getCroppedImage(genre.image_background)} />
