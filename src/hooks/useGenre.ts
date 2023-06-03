@@ -8,7 +8,7 @@ export interface Genre {
     name: string;
     image_background: string;
 }
-const apiClient = new ApiClient('/genres');
+const apiClient = new ApiClient<Genre>('/genres');
 
 const fetchGenre = () => apiClient.getAll();
 const useGenre = () => useQuery({
