@@ -12,7 +12,7 @@ export interface Game {
     rating_top: number;
 }
 const apiClient = new ApiClient<Game>('/games');
-const pageSize = 10;
+
 const useGames = (gameQuery: GameQuery) => useInfiniteQuery<FetchResponse<Game>,Error>({
     queryKey: ['games', gameQuery],
     queryFn: ({pageParam = 1}) => apiClient.getAll({params:{
