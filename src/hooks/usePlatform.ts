@@ -1,13 +1,7 @@
-import useData from "./useData";
-
-interface Platform {
-    id: number;
-    name: string;
-    slug: string;
+import usePlatforms from "./usePlatforms";
+const usePlatform = (id?: number) =>{
+    const {data: platforms} = usePlatforms();
+    return platforms?.results.find(p => p.id === id);
 }
 
-const usePlatform = () => useData<Platform>('/platforms/lists/parents');
-
 export default usePlatform;
-
-
