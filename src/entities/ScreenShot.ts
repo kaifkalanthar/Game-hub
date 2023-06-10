@@ -1,4 +1,4 @@
-export interface ScreenShot {
+export default interface ScreenShot {
   id: number;
   width: number;
   height: number;
