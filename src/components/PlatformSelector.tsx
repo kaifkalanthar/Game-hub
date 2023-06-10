@@ -9,8 +9,7 @@ const PlatformSelector = () => {
   const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
   const { data, error } = usePlatforms();
   const selectedPlatform = usePlatform(selectedPlatformId);
-  console.log(selectedPlatform);
-
+  
   if (error) return null;
   return (
     <Menu>
