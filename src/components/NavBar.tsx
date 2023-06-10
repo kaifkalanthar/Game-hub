@@ -1,20 +1,21 @@
-import { HStack, Image } from '@chakra-ui/react';
-import logo from '../assets/logo.webp';
-import ColorModeSwitch from './ColorModeSwitch';
-import SearchInput from './SearchInput';
+import { Box, HStack, Image } from "@chakra-ui/react";
+import logo from "../assets/logo.webp";
+import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
-interface Props {
-    onSearchInput: (Searchtext: string) => void;
-}
+const NavBar = () => {
+  return (
+    <HStack padding="10px">
+      <Box minWidth="60px">
+        <Link to="/">
+          <Image src={logo} boxSize="60px" objectFit="cover" />
+        </Link>
+      </Box>
+      <SearchInput />
+      <ColorModeSwitch />
+    </HStack>
+  );
+};
 
-const NavBar = ({ onSearchInput }: Props) => {
-    return (
-        <HStack padding='10px'>
-            <Image src={logo} boxSize='60px' />
-            <SearchInput onSearchInput={onSearchInput} />
-            <ColorModeSwitch />
-        </HStack>
-    )
-}
-
-export default NavBar
+export default NavBar;
